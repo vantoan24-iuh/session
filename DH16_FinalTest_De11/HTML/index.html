@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <script src="../JS/jquery-3.6.4.min.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../CSS/index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" id="menu">
+            <div class="col-2" id="img">
+                <img src="../img/logo7.png" alt="">
+            </div>
+            <div class="col-10">
+                <nav class="navbar">
+                    <ul class="navbar nav">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Giới thiệu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Dịch vụ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" data-target="#frmdk" data-toggle="modal" class="nav-link">Ký gửi hàng hóa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Liên hệ</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="title">
+                <h3>Danh sách kiện hàng hóa gửi</h3>
+            </div>
+            <table class="col-12 table-bordered" id="tb">
+                <tr>
+                    <th>STT</th>
+                    <th>Số serial</th>
+                    <th>Mô tả kiện hàng</th>
+                    <th>Hình ảnh</th>
+                    <th>Trọng lượng (kg)</th>
+                    <th>Phí Vận chuyển (VNĐ)</th>
+                </tr>
+            </table>
+        </div>
+        <div class="row" id="hoten">
+            <footer class="col-12">
+                <h2>21077971-NgoVanToan</h2>
+            </footer>
+
+        </div>
+    </div>
+
+    <div class="modal" id="frmdk">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Thông tin kiện hàng hóa gửi</h3>
+                <button data-dismiss="modal" class="close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form action="">
+                    <div class="row form-group">
+                        <label for="" class="col-2">Số serial</label>
+                        <div class="col-10">
+                            <input type="text" name="txtso" id="txtso" class="form-control">
+                            <p class="error" id="erso"></p>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label for="" class="col-2">Mô tả linh kiện:</label>
+                        <div class="col-10">
+                            <input type="text" name="txtmota" id="txtmota" class="form-control">
+                            <p class="error" id="ermota"></p>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label for="" class="col-2">Hình ảnh: </label>
+                        <div class="col-10">
+                            <input type="file" id="txtanh" class="form-control" style="border: none;">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label for="" class="col-2">Trọng lượng (Kg):</label>
+                        <div class="col-10">
+                            <input type="text" name="txttrongluong" id="txttl" class="form-control">
+                            <p class="error" id="ertl"></p>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label for="" class="col-2">Chi phí vận chuyển (VND):</label>
+                        <div class="col-10">
+                            <input type="text" name="txtpvc" id="txtpvc" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-danger" id="btn">Xác nhận</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="../JS/index.js"></script>
+</body>
+
+</html>

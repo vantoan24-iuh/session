@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.6.4.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/main.css">
+    <title>On_5</title>
+</head>
+<body>
+    <div class="container ">
+        <header>
+            <h1 class="text-center text-danger">Header</h1>
+            <ul class="nav-bar">
+                <li class="nav-item"><a href="" class="nav-link">Trang chủ</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Sự kiện</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Hỗ trợ sinh viên</a></li>
+                <li class="nav-item"><a href="" data-target="#frmk"  data-toggle="modal" class="nav-link">Đăng ký tình nguyện</a></li>
+            </ul>
+        </header>
+
+        <main style="height: 100px; display: flex;">
+            <section class="col-10">
+                Form
+            </section>
+            <aside class="col-2">
+                <img  src="../logo7.png" alt="" style="width: 100%; ">
+            </aside>
+        </main>
+
+        <div class="content">
+            <h3>
+                DANH SÁCH ĐOÀN VIÊN ĐĂNG KÝ
+            </h3>
+            <table id="tbll">
+                <tr>
+                    <th>STT</th>
+                    <th>Mã số sinh vien</th>
+                    <th>Họ tên</th>
+                    <th>Giới tính</th>
+                    <th>Số điện thoại</th>
+                    <th>Ngày bắt đầu</th>
+                    <th>Hoạt động đăng ký</th>
+                    <th>Hoạt động tình nguyên</th>
+                </tr>
+            </table>
+        </div>
+        <footer> 
+            <br>
+
+            <h4 class="text-right">21010761</h4>
+        </footer>
+    </div>
+
+    <div class="modal" id="frmk">
+        <div class="modal-header">
+            <h3>Thong tin đăng ký</h3>
+            <button data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form action="">
+                <div class="form-group row">
+                    <label for="" class="col-2">Max số sinh vien</label>
+                    <div class="col-10">
+                        <input type="text" name="" id="txtma" class="form-control">
+                        <p  class="error" id="erma">(*)</p>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="" class="col-2">Họ tên</label>
+                    <div class="col-10 row">
+                        <div class="col-6">
+                            <input type="text" name="" id="txtho" class="form-control">
+                            <p class="error" id="erho">(*)</p>
+                        </div>
+                        <div class="col-6">
+                            <input type="text" name="" id="txtten" class="form-control">
+                            <p  class="error" id="erten">(*)</p>
+                        </div>
+                        
+
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="" class="col-2">Gioi tinh</label>
+                    <div class="col-10">
+                        <input type="radio" name="gt" id="" class="form-control-inline" value="Nam">Nam
+                        <input type="radio" name="gt" id="" class="form-control-inline" value="Nu">Nu
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="" class="col-2">Số điện thoại</label>
+                    <div class="col-10">
+                        <input type="tel" name="" id="txtsdt" class="form-control">
+                        <p  class="error" id="erdt">(*)</p>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="" class="col-2">Ngày sinh</label>
+                    <div class="col-10">
+                        <input type="date" name="" id="txtng" class="form-control">
+                        <p  class="error" id="erng"></p>
+
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="" class="col-2">Hoạt động đăng ký</label>
+                    <div class="col-10">
+                       <select name="" id="loaihd" class="form-control">
+                        <option value=""></option>
+                        <option value="Tiếp sức mùa thi">Tiếp sức mùa thi</option>
+                        <option value="Xuân tình nguyên">Xuân tình nguyên</option>
+
+                       </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="" class="col-2">Hoạt động tình nguyện</label>
+                    <div class="col-10">
+                        <input type="checkbox" name="tn" id="" class="form-control-inline" value="Ngắn hạn">Ngắn hạn
+                        <input type="checkbox" name="tn" id="" class="form-control-inline" value="Thường xuyên">Thường xuyên
+                        <input type="checkbox" name="tn" id="" class="form-control-inline"value="Dai han">Dafi hạn
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <button id="btn" data-dismiss="modal" type="button" >Đăng ký</button>
+                   <button type="reset">Xóa rỗng</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="../js/main.js"></script>
+</body>
+</html>

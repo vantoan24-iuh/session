@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.6.4.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/main.css">
+    <title>De1</title>
+    <script>
+        $(document).ready(function() {
+            function ktMa() {
+                let ma = $('#txtma').val();
+                let ctMa = /^BN-\d{5}/;
+                if (ctMa.test(ma)) {
+                    $('#erma').html("(*)");
+                    return true;
+                } else {
+                    $('#erma').html("(*)BN-YYYYY");
+                    $('#erma').addClass('error');
+                    return false;
+                }
+            }
+
+            function ktMK() {
+                let pw = $('#psmk').val();
+                let ctpw = /^.{6,}.$/;
+                if (ctpw.test(pw)) {
+                    $('#erps').html("(*)");
+                    return true;
+                } else {
+                    $('#erps').html("(*)lon hon 6 ky tu");
+                    $('#erps').addClass('error');
+                    return false;
+                }
+            }
+
+            function ktNgay() {
+                let today = new Date();
+                let ngay = $('#txtngay').val();
+                let checkngay = new Date(ngay);
+                if (checkngay > today) {
+                    $('#erng').html("(*)");
+                    return true;
+                } else {
+                    $('#erng').html("(*)sau ngay hien tai");
+                    $('#erng').addClass('error');
+                    return false;
+                }
+            }
+
+            $('#txtma').blur(function(e) {
+                ktMa();
+            });
+
+            $('#psmk').blur(function(e) {
+                ktMK();
+            });
+
+            $('#txtngay').blur(function(e) {
+                ktNgay();
+            });
+            let count = 1;
+            $('#btn').click(function(e) {
+                let ma = $('#txtma').val();
+                let ngay = $('#txtngay').val();
+                let pw = $('#psmk').val();
+                let phidv = 0;
+                $.each($("input[name='loaidv']:checked"), function() {
+                    phidv += eval($("input[name='loaidv']:checked").val());
+                });
+
+                let chuyenKhoa = $("#listKhoa option:selected").text();
+
+                if (ktMK() && ktMa() && ktNgay()) {
+                    let trNew = "<tr><td>" + count++ + "</td><td>" + ma + "</td><td>" + pw + "</td><td>" + ngay + "</td><td>" + phidv + "</td><td>" + chuyenKhoa + "</td></tr>";
+                    $('#tbbn').append(trNew);
+                }
+
+                $('#txtma').val("");
+                $('#txtngay').val("dd/mm/yyyy");
+                $('#psmk').val("");
+
+                //prop thiết lập lại thuộc tính trả về
+                $("input[name='loaidv']").prop("checked", false);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1 class="tittle-header text-center" style="color: blue;">Tư Vấn Online</h1>
+        </header>
+        <main>
+            <ul class="nav-bar">
+                <li class="nav-item"><a href="#" class="nav-link">Trang Chu</a></li>
+                <li class="nav-item"><a href="#" data-target="#frmdk" data-toggle="modal" class="nav-link">Dat ve</a>
+                </li>
+                </li>
+            </ul>
+
+            <table class="col-12 text-center table-info" id="tbbn">
+                <tr>
+                    <th>STT</th>
+                    <th>Mã bệnh nhân</th>
+                    <th>Mật khẩu</th>
+                    <th>Ngày sinh</th>
+                    <th>Phụ thu dịch vụ</th>
+                    <th>Chuyên khoa</th>
+                </tr>
+
+            </table>
+        </main>
+        <footer>
+            <h2 class="text-center">21010761-PhanTienSinh</h2>
+        </footer>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="frmdk">
+        <div class="modal-header">
+            <h1>Đặt lịch khám online</h1>
+            <button data-dismiss="modal" class="close">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form action="">
+                <div class="form-group">
+                    <label for="">Ma san pham</label>
+                    <input type="text" id="txtma" class="form-control">
+                    <p id="erma">(*)</p>
+                </div>
+                <div class="form-group">
+                    <label for="">Mat khau</label>
+                    <input type="text" id="psmk" class="form-control">
+                    <p id="erps">(*)</p>
+                </div>
+                <div class="form-group">
+                    <label for="">Ngày khám</label>
+                    <input type="date" id="txtngay" class="form-control" placeholder="dd/mm/yyyy">
+                    <p id="erng">(*)</p>
+                </div>
+                <div class="form-group">
+                    <label for="" class="col-2">Loại dịch vụ</label> <br>
+                    <div class="col-10">
+                        <input type="checkbox" class="form-check-inline" name="loaidv" value="500000">Khám bệnh theo yêu cầu
+                        <input type="checkbox" class="form-check-inline" name="loaidv" value="500000">Điều trị ngoại trú
+                        <input type="checkbox" class="form-check-inline" name="loaidv" value="500000">Bác sĩ theo yêu cầu
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <span class="col-2">Ngày khám</span>
+                    <div class="col-10">
+
+                        <select id="listKhoa" class="form-control">
+                            <option value="Ngoại tổng quát">Ngoại tổng quát</option>
+                            <option value="Nhi">Nhi</option>
+                            <option value="Nội tổng quát">Nội tổng quát</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button class="btn" id="btn" type="button">Dat lich</button>
+                </div>
+
+            </form>
+        </div>
+        <div class="modal-footer text-center">
+            21010761-PhanTienSinh
+        </div>
+    </div>
+</body>
+
+</html>
