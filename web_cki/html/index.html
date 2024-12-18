@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+
+    <script src="../js/index.js"></script>
+    <title>WEB</title>
+</head>
+<style>
+    .container{
+        margin: auto;
+        padding: 0;
+    }
+    .error{
+       color: red;
+       font-size: 15px;
+    }
+
+</style>
+<body>
+    <div class="container">
+        <div class="row">
+            <img src="../img/merry.jpg" alt="" height="200px">
+        </div>
+        <nav class="navbar">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#frmk" class="nav-link">
+                        Thong tin
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="row">
+            <table class="table table-info" id="tb">
+                <thead class="table-active">
+                    <tr>
+                        <th>STT</th>
+                        <th>MSSV</th>
+                        <th>Họ tên</th>
+                        <th>Email</th>
+                        <th>SDT</th>
+                        <th>Giới tính</th>
+                        <th>Ngày sinh</th>
+                        <th>Khóa</th>
+                        <th>Ngành học</th>
+                        <th>Môn học</th>
+                        <th>Tổng tiền</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+                <p>Ngo Van Toan</p>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="frmk">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Đăng nhập</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-group row p-1">
+                            <div class="md-3">
+                                <label for="ma">MSSV: </label>
+                            </div>
+                            <div class="md-7">
+                                <input type="text" class="form-control" id="ma" name="ma">
+                                <p class="error" id="maError">(*)</p>
+                            </div>
+                        </div>
+                        <div class="form-group row p-1">
+                            <div class="md-3">
+                                <label for="ten">Họ tên: </label>
+                            </div>
+                            <div class="md-7">
+                                <input type="text" class="form-control" id="ten" name="ten">
+                                <p class="error" id="tenError">(*)</p>
+                            </div>
+                        </div>
+                        <div class="form-group row p-1">
+                            <div class="md-3">
+                                <label for="mail">Email: </label>
+                            </div>
+                            <div class="md-7">
+                                <input type="text" class="form-control" id="mail" name="mail">
+                                <p class="error" id="mailError">(*)</p>
+                            </div>
+                        </div>
+                        <div class="form-group row p-1">
+                            <div class="md-3">
+                                <label for="sdt">SDT: </label>
+                            </div>
+                            <div class="md-7">
+                                <input type="text" class="form-control" id="sdt" name="sdt">
+                                <p class="error" id="sdtError">(*)</p>
+                            </div>
+                        </div>
+                        <div class="form-group row p-1">
+                            <div class="md-3">
+                                <label for="gt">Gioi tinh</label>
+                            </div>
+
+                            <div class="md-7" style="margin-left: 20px;">
+                                <input type="radio" name="gt" id="gt" class="form-control-inline" value="Nam">Nam <br>
+                                <input type="radio" name="gt" id="gt" class="form-control-inline" value="Nu">Nu
+                            </div>
+                        </div>
+                        <div class="form-group row p-1">
+                            <div class="md-3">
+                                <label for="ns">Ngày sinh: </label>
+                            </div>
+                            <div class="md-7">
+                                <input type="date" class="form-control" id="ns" name="ns">
+                                <p class="error" id="nsError">(*)</p>
+                            </div>
+                        </div>
+                        <div class="form-group row p-1">
+                            <div class="md-3">
+                                <label for="khoa">Khóa: </label>
+                            </div>
+
+                            <div class="md-7" style="margin-left: 20px;">
+                                <input type="checkbox" name="khoa" id="khoa" class="form-control-inline" value="k18">k18
+                                <br>
+                                <input type="checkbox" name="khoa" id="khoa" class="form-control-inline" value="k19">k19
+                                <br>
+                                <input type="checkbox" name="khoa" id="khoa" class="form-control-inline" value="k10">k20
+                                <br>
+                                <input type="checkbox" name="khoa" id="khoa" class="form-control-inline" value="k21">k21
+                                <br>
+                            </div>
+                        </div>
+                        <div class="form-group row p-1">
+                            <div class="md-3">
+                                <label for="nganh">Ngành: </label>
+                            </div>
+
+                            <div class="md-7">
+                               <select id="nganh" name="nganh">
+                                      <option value="2000">CNTT</option>
+                                      <option value="3000">KT</option>
+                                      <option value="4000">CK</option>
+                                      <option value="5000">KH</option>
+                               </select>
+                            </div>
+                        </div>
+                        <div class="form-group row p-1">
+                            <div class="md-3">
+                                <label for="mh">môn học</label>
+                            </div>
+                            <div class="md-7" style="margin-left: 20px;">
+                                <input type="checkbox" name="mh" id="mh" class="form-control-inline" value="200">Toan
+                                <br>
+                                <input type="checkbox" name="mh" id="mh" class="form-control-inline" value="250">Ly <br>
+                                <input type="checkbox" name="mh" id="mh" class="form-control-inline" value="300">Java
+                                <br>
+                                <input type="checkbox" name="mh" id="mh" class="form-control-inline" value="400">C++
+                                <br>
+                            </div>
+                        </div>
+                        <div class="form-group row p-1">
+                            <div class="md-3">
+                                <label for="tt">Tổng Tiền: </label>
+                            </div>
+                            <div class="md-7">
+                                <input type="text" class="form-control" id="tt" name="tt" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn-success" id="btn">Add</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <footer>
+                <p>Copy right 2021</p>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
